@@ -4,6 +4,9 @@
 # https://github.com/acidvegas/vpntools
 # cryptostorm.sh
 
+# Contributions by Fermi @ CryptoStorm for help with the killswitch.
+#  - https://github.com/fermi-cryptostorm/fermi-cryptostorm-git
+
 DEFAULT_PROTOCOL=0 # 0 = udp | 1 = tcp
 DEFAULT_SERVER=0
 DISABLE_IPV6=1
@@ -84,7 +87,6 @@ function generate_config {
 	echo "verb 4" >> /etc/openvpn/client/cryptostorm/cryptostorm.conf
 }
 
-# contributions by fermi @ cryptostorm
 function killswitch {
 	if [ -f /etc/iptables/vpn-rules.v4 ]; then
 		iptables-restore < /etc/iptables/vpn.rules
